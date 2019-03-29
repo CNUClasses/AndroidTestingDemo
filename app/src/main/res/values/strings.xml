@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidTestingDemo</string>
+    <string name="chase_switch_name">Chase Bank</string>
 </resources>
