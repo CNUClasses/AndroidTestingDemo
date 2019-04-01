@@ -1,0 +1,59 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+
+\usetheme{Madrid}
+% \usecolortheme{beaver}
+\usepackage{xcolor}
+\usepackage{listings}
+\graphicspath{ {figures/} }
+
+\lstset{
+    basicstyle=\fontsize{8}{9}\selectfont\ttfamily\color{black},
+    commentstyle=\color{gray},
+    frame=single,
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    showspaces=false,
+    showstringspaces=false,
+    stringstyle=\color{green},
+    tabsize=2
+}
+
+\title{Android Testing}
+\author{William Drumheller}
+\date{APR2019}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\begin{center}
+Proudly created using \LaTeX
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Android Testing}
+\begin{itemize}
+    \item Blah
+    \item Blah
+    \item \dots
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Sample Code}
+\begin{lstlisting}[language=java,caption={Sample Code}}]
+@Test
+public void defaultTextViewIsDue() {
+    ViewInteraction interaction = onView(withId(R.id.chase_text_view));
+    interaction.check(matches(hasTextColor(R.color.due)));
+    interaction.check(matches(withText("DUE")));
+}
+\end{lstlisting}
+\end{frame}
+
+\end{document}
