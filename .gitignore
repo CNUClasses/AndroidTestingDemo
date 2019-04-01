@@ -54,3 +54,14 @@ captures/
 
 # Version control
 vcs.xml
+
+*.out
+*.aux
+*.log
+*.nav
+*.snm
+*.toc
+*.vrb
+*.log
+*.pdf
+.DS_Store

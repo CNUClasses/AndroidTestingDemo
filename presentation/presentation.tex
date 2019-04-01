@@ -23,7 +23,7 @@
 }
 
 \title{Android Testing}
-\author{William Drumheller}
+\author{William Drumheller, Tanner Reed}
 \date{APR2019}
 
 \begin{document}
@@ -46,10 +46,11 @@ Proudly created using \LaTeX
 
 \begin{frame}[fragile]
 \frametitle{Sample Code}
-\begin{lstlisting}[language=java,caption={Sample Code}}]
+\begin{lstlisting}[language=java,caption={Sample Code}]
 @Test
 public void defaultTextViewIsDue() {
-    ViewInteraction interaction = onView(withId(R.id.chase_text_view));
+    ViewInteraction interaction =
+        onView(withId(R.id.chase_text_view));
     interaction.check(matches(hasTextColor(R.color.due)));
     interaction.check(matches(withText("DUE")));
 }
