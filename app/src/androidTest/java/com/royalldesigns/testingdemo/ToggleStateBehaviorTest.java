@@ -13,6 +13,7 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.*;
+import static org.hamcrest.core.IsNot.not;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -49,6 +50,25 @@ public class ToggleStateBehaviorTest {
 
         interaction.check(matches(hasTextColor(R.color.due)));
         interaction.check(matches(withText("DUE")));
+    }
+
+    @Test
+    public void textBoxIsHiddenByDefault() {
+        onView(withId(R.id.chase_amount_text)).check(matches(not(isDisplayed())));
+    }
+
+    @Test
+    public void textBoxIsHiddenWhenSwitchIsTurnedOff() {
+        onView(withId(R.id.chase_switch)).perform(click()).perform(click()); //Turn On, then Off
+
+        onView(withId(R.id.chase_amount_text)).check(matches(not(isDisplayed())));
+    }
+
+    @Test
+    public void textBoxPopsUpWhenSwitchIsTurnedOn() {
+        onView(withId(R.id.chase_switch)).perform(click());
+
+        onView(withId(R.id.chase_amount_text)).check(matches(isDisplayed()));
     }
 
 }

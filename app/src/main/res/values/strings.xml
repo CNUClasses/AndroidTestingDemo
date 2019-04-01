@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AndroidTestingDemo</string>
     <string name="chase_switch_name">Chase Bank</string>
+    <string name="chase_amount_hint">Enter an amount here...</string>
 </resources>
