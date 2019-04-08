@@ -14,7 +14,6 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     private TextView chaseTextView;
-    private EditText chaseAmountText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
         chaseTextView = findViewById(R.id.chase_text_view);
         changeTextViewToDue(chaseTextView);
-        chaseAmountText = findViewById(R.id.chase_amount_text);
-        chaseAmountText.setVisibility(View.INVISIBLE);
 
         Switch chaseSwitch = findViewById(R.id.chase_switch);
         chaseSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -32,11 +29,9 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)  {
                     changeTextViewToPaid(chaseTextView);
-                    chaseAmountText.setVisibility(View.VISIBLE);
                 }
                 else {
                     changeTextViewToDue(chaseTextView);
-                    chaseAmountText.setVisibility(View.INVISIBLE);
                 }
             }
         });

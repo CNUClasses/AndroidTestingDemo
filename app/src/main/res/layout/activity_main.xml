@@ -15,12 +15,4 @@
         android:text=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/chase_amount_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType=""
-        android:text=""
-        android:importantForAutofill="no"
-        android:hint="@string/chase_amount_hint"/>
 </LinearLayout>

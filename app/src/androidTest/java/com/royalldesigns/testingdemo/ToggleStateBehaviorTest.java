@@ -52,23 +52,4 @@ public class ToggleStateBehaviorTest {
         interaction.check(matches(withText("DUE")));
     }
 
-    @Test
-    public void textBoxIsHiddenByDefault() {
-        onView(withId(R.id.chase_amount_text)).check(matches(not(isDisplayed())));
-    }
-
-    @Test
-    public void textBoxIsHiddenWhenSwitchIsTurnedOff() {
-        onView(withId(R.id.chase_switch)).perform(click()).perform(click()); //Turn On, then Off
-
-        onView(withId(R.id.chase_amount_text)).check(matches(not(isDisplayed())));
-    }
-
-    @Test
-    public void textBoxPopsUpWhenSwitchIsTurnedOn() {
-        onView(withId(R.id.chase_switch)).perform(click());
-
-        onView(withId(R.id.chase_amount_text)).check(matches(isDisplayed()));
-    }
-
 }
