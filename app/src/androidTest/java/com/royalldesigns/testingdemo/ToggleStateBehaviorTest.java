@@ -1,13 +1,21 @@
 package com.royalldesigns.testingdemo;
 
+import android.app.Activity;
+import android.content.Context;
+
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.io.Console;
+import java.io.File;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -21,6 +29,14 @@ public class ToggleStateBehaviorTest {
 
     @Rule
     public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
+
+    @After
+    public void tearDown() {
+        Activity activity = activityRule.getActivity();
+        Context context = activity.getApplicationContext();
+        File deleteFile = new File(context.getFilesDir(), "switch.state");
+        deleteFile.delete();
+    }
 
     @Test
     public void defaultSwitchStateIsOff() {
