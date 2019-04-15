@@ -23,8 +23,8 @@
 }
 
 \title{Android Testing}
-\author{William Drumheller, Tanner Reed}
-\date{APR2019}
+\author{William Royall Drumheller, Eric Tanner Reed}
+\date{16APR2019}
 
 \begin{document}
 
@@ -37,45 +37,45 @@ Proudly created using \LaTeX
 
 \begin{frame}
 \frametitle{Testing Structure}
-\center\includegraphics[scale=0.5]{TestLifeCycle}
+% \center\includegraphics[scale=0.5]{TestLifeCycle}
 \begin{itemize}
-	\item Small Tests: small tests and small scale Unit tests. (E.G. testing that a counter increments correctly)
-    	\item Medium Tests: medium tests sit in between small and large tests. They test portions of the application dealing with backend components like threads or listeners
-	\item Large Tests: large tests deal with more abstract end user components like UI and buttons
+    \item Small Tests: small scale Unit tests, such as testing that a counter increments correctly
+    \item Medium Tests: medium tests attempt to test the integration between multiple components
+    \item Large Tests: large tests deal with more abstract end user components like UI and buttons
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Our App}
-\center\includegraphics[scale=0.5]{AppStart}
-\end{frame}
+% \begin{frame}
+% \frametitle{Our App}
+% \center\includegraphics[scale=0.5]{AppStart}
+% \end{frame}
 
-\begin{frame}
-\frametitle{Our App}
-\center\includegraphics[scale=0.5]{AppPress}
-\end{frame}
+% \begin{frame}
+% \frametitle{Our App}
+% \center\includegraphics[scale=0.5]{AppPress}
+% \end{frame}
 
-\begin{frame}
-\frametitle{Testing Tools}
-\center\includegraphics[scale=0.5]{MockitoLogo}
-\end{frame}
+% \begin{frame}
+% \frametitle{Testing Tools}
+% \center\includegraphics[scale=0.5]{MockitoLogo}
+% \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Test Code Walkthrough}
-\begin{lstlisting}[language=java,caption={Test Code Walkthrough}]		
-@Test
-    public void textViewIsPaidWhenSwitchIsTurnedOn() {
-		//step 1) set up the scenario (pressing the button)       
-        onView(withId(R.id.chase_switch)).perform(click());
-        ViewInteraction interaction 
-		= onView(withId(R.id.chase_text_view));
+% \begin{frame}[fragile]
+% \frametitle{Test Code Walkthrough}
+% \begin{lstlisting}[language=java,caption={Test Code Walkthrough}]
+% @Test
+%     public void textViewIsPaidWhenSwitchIsTurnedOn() {
+%         //step 1) set up the scenario (pressing the button)
+%         onView(withId(R.id.chase_switch)).perform(click());
+%         ViewInteraction interaction
+%         = onView(withId(R.id.chase_text_view));
 
-		//step 2) check the scenario (has the textview changed?)
-        interaction.check(matches(hasTextColor(R.color.paid)));
-        interaction.check(matches(withText("PAID")));
-}
-\end{lstlisting}
-\end{frame}
+%         //step 2) check the scenario (has the textview changed?)
+%         interaction.check(matches(hasTextColor(R.color.paid)));
+%         interaction.check(matches(withText("PAID")));
+% }
+% \end{lstlisting}
+% \end{frame}
 
 \end{document}
