@@ -7,3 +7,5 @@ Sample Android Tests with Implementation
 - [Espresso UI Testing](https://developer.android.com/training/testing/ui-testing/espresso-testing#java)
 - [Robolectric](http://robolectric.org/)
 - [Robolectric Tests](http://robolectric.org/writing-a-test/)
+- [Linting](https://developer.android.com/studio/write/lint)
+
