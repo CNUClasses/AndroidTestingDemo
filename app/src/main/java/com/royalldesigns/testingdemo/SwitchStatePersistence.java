@@ -22,7 +22,7 @@ public class SwitchStatePersistence {
         try {
             PrintStream out = new PrintStream(new FileOutputStream(stateFile));
             out.print(switchToSave.isChecked());
-//            out.close();
+            out.close();
         } catch (FileNotFoundException e) {
             Log.e("SwitchStatePersistence", "Error writing to file.");
         }
