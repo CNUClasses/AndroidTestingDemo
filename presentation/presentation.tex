@@ -36,23 +36,44 @@ Proudly created using \LaTeX
 \end{frame}
 
 \begin{frame}
-\frametitle{Android Testing}
+\frametitle{Testing Structure}
+\center\includegraphics[scale=0.5]{TestLifeCycle}
 \begin{itemize}
-    \item Blah
-    \item Blah
-    \item \dots
+	\item Small Tests: small tests and small scale Unit tests. (E.G. testing that a counter increments correctly)
+    	\item Medium Tests: medium tests sit in between small and large tests. They test portions of the application dealing with backend components like threads or listeners
+	\item Large Tests: large tests deal with more abstract end user components like UI and buttons
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Our App}
+\center\includegraphics[scale=0.5]{AppStart}
+\end{frame}
+
+\begin{frame}
+\frametitle{Our App}
+\center\includegraphics[scale=0.5]{AppPress}
+\end{frame}
+
+\begin{frame}
+\frametitle{Testing Tools}
+\center\includegraphics[scale=0.5]{MockitoLogo}
+\end{frame}
+
+
 \begin{frame}[fragile]
-\frametitle{Sample Code}
-\begin{lstlisting}[language=java,caption={Sample Code}]
+\frametitle{Test Code Walkthrough}
+\begin{lstlisting}[language=java,caption={Test Code Walkthrough}]		
 @Test
-public void defaultTextViewIsDue() {
-    ViewInteraction interaction =
-        onView(withId(R.id.chase_text_view));
-    interaction.check(matches(hasTextColor(R.color.due)));
-    interaction.check(matches(withText("DUE")));
+    public void textViewIsPaidWhenSwitchIsTurnedOn() {
+		//step 1) set up the scenario (pressing the button)       
+        onView(withId(R.id.chase_switch)).perform(click());
+        ViewInteraction interaction 
+		= onView(withId(R.id.chase_text_view));
+
+		//step 2) check the scenario (has the textview changed?)
+        interaction.check(matches(hasTextColor(R.color.paid)));
+        interaction.check(matches(withText("PAID")));
 }
 \end{lstlisting}
 \end{frame}
