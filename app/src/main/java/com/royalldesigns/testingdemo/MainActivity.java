@@ -9,6 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -29,9 +30,13 @@ public class MainActivity extends AppCompatActivity {
 
         chaseSwitch = findViewById(R.id.chase_switch);
         handlePastSwitchState(switchStatePersistence);
+        final Toaster toaster = new Toaster();
         chaseSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Toast toast = Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG);
+                toaster.toastIt(toast, isChecked);
+                toast.show();
                 handleSwitchState(isChecked);
                 switchStatePersistence.saveState(chaseSwitch);
             }
