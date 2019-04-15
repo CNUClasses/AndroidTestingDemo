@@ -55,6 +55,7 @@ captures/
 # Version control
 vcs.xml
 
+# LaTeX output files
 *.out
 *.aux
 *.log
@@ -64,4 +65,10 @@ vcs.xml
 *.vrb
 *.log
 *.pdf
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Mac OS X File System
 .DS_Store
+
