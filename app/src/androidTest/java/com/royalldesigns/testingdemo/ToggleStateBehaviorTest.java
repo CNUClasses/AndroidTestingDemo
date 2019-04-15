@@ -52,4 +52,16 @@ public class ToggleStateBehaviorTest {
         interaction.check(matches(withText("DUE")));
     }
 
+    @Test
+    public void paidStatePersistsAcrossRestart() {
+        onView(withId(R.id.chase_switch)).perform(click());
+        ViewInteraction interaction = onView(withId(R.id.chase_text_view));
+
+        activityRule.finishActivity();
+        activityRule.launchActivity(null);
+
+        interaction.check(matches(hasTextColor(R.color.paid)));
+        interaction.check(matches(withText("PAID")));
+    }
+
 }
