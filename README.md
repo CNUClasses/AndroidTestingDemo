@@ -7,6 +7,9 @@ A project for Christopher Newport University's Mobile Computing Course\
 - William Royall Drumheller
 - Eric Tanner Reed
 
+### Presentation
+The finished presentation, detailed in class, is available [here](presentation/presentation.pdf)
+
 ### References:
 - [Android Testing Fundamentals](https://developer.android.com/training/testing/fundamentals)
 - [Android Testing Talk / Overview](https://www.youtube.com/watch?v=pK7W5npkhho)
